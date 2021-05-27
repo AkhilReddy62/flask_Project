@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
@@ -119,6 +119,14 @@ def jinja_macros():
 
     return render_template('using_macros.html',
                            movies=movies_dict)
+
+
+# SESSION OBJECT
+@app.route('/session')
+def session_data():
+    if 'name' not in session:
+        session['name'] = 'harry'
+    return render_template('session.html', session=session, name=session['name'])
 
 
 # PUBLICATION TABLE
