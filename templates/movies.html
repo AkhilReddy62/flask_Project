@@ -1,0 +1,22 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Top movies</title>
+</head>
+<body>
+     {{ name }} like {{ movies }}
+<ol>
+    <li>{{ movies[0] }}</li>
+    <li>{{ movies[1] }}</li>
+</ol>
+<hr>
+
+<ul>
+    {% for movie in movies %}
+        <li>the movie name is : {{ movie }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
